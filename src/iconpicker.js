@@ -37,7 +37,7 @@ export default class Iconpicker
             }
 
             if (showSelectedIn){
-                this.options.showSelectedIn.innerHTML = `<i class="${value}"></i>`
+                this.options.showSelectedIn.innerHTML = `<img src='${iconPath}${value}' />`
             }
         }))
 
