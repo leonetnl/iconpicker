@@ -22,20 +22,20 @@
     <script src="../dist/iconpicker.js"></script>
     <script>
         (async () => {
-            const response = await fetch('http://127.0.0.1:5500/dist/iconsets/bootstrap5.json')
+            const response = await fetch('selection.json')
             const result = await response.json()
 
 
             const iconpicker = new Iconpicker(document.querySelector(".iconpicker"), {
                 icons: result,
+                iconPath: 'icons/',
                 showSelectedIn: document.querySelector(".selected-icon"),
                 searchable: true,
                 selectedClass: "selected",
                 containerClass: "my-picker",
                 hideOnSelect: true,
                 fade: true,
-                defaultValue: 'bi-alarm',
-                valueFormat: val => `bi ${val}`
+                defaultValue: 'bi-alarm'
             });
 
             iconpicker.set() // Set as empty

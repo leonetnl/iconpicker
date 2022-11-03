@@ -6,6 +6,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'iconpicker.js',
   },
+    devServer: {
+      static: {
+        directory: path.join(__dirname),
+      },
+      liveReload: true
+  },
   module: {
     rules: [
       {

@@ -8,7 +8,8 @@
     "example": "example"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode=production"
+    "build": "webpack --config webpack.config.js --mode=production",
+    "start": "webpack serve --open --live-reload"
   },
   "keywords": [
     "icons",
@@ -22,14 +23,17 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
-    "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "webpack": "^5.19.0",
-    "webpack-cli": "^4.4.0"
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "sass": "^1.55.0"
   }
 }

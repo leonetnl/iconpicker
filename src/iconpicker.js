@@ -11,6 +11,7 @@ export default class Iconpicker
             selectedClass = 'selected',
             defaultValue = '',
             icons = [],
+            iconPath = '',
             searchable = true,
             containerClass = '',
             showSelectedIn = null
@@ -20,7 +21,7 @@ export default class Iconpicker
         this.el.insertAdjacentHTML('afterend', `
             <div class="iconpicker-dropdown ${containerClass}">
                 <ul>
-                    ${icons.map(icon => `<li value="${this.valueFormat(icon)}" class="${defaultValue === icon ? selectedClass : ''}"><i class="${this.valueFormat(icon)}"></i></li>`).join('')}
+                    ${icons.map(icon => `<li value="${this.valueFormat(icon)}" class="${defaultValue === icon ? selectedClass : ''}"><img src='${iconPath}${this.valueFormat(icon)}' /></li>`).join('')}
                 </ul>
             </div>
         `)
