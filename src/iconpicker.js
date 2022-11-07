@@ -21,7 +21,7 @@ export default class Iconpicker
         this.el.insertAdjacentHTML('afterend', `
             <div class="iconpicker-dropdown ${containerClass}">
                 <ul>
-                    ${icons.map(icon => `<li value="${this.valueFormat(icon)}" class="${defaultValue === icon ? selectedClass : ''}"><img src='${iconPath}${this.valueFormat(icon)}' /></li>`).join('')}
+                    ${icons.map(icon => `<li value="${this.valueFormat(icon)}" class="${defaultValue === icon ? selectedClass : ''}"><img src='${iconPath}${this.valueFormat(icon)}.svg' /></li>`).join('')}
                 </ul>
             </div>
         `)
@@ -37,7 +37,7 @@ export default class Iconpicker
             }
 
             if (showSelectedIn){
-                this.options.showSelectedIn.innerHTML = `<img src='${iconPath}${value}' />`
+                this.options.showSelectedIn.innerHTML = `<img src='${iconPath}${value}.svg' />`
             }
         }))
 
@@ -74,7 +74,8 @@ export default class Iconpicker
      */
     setIconOnChange = () => {
         if (this.options?.showSelectedIn){
-            this.options.showSelectedIn.innerHTML = `<i class="${this.el.value}"></i>`
+            let path = this.options.iconPath + this.el.value
+            this.options.showSelectedIn.innerHTML = `<img src='${path}.svg' />`
         }
     }
 
